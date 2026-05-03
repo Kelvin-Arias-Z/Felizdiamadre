@@ -1,18 +1,89 @@
-<div class="card">
-  <h1>Feliz Día de la Madre ❤️</h1>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Para Mamá ❤️</title>
 
-  <!-- 👇 AQUÍ VA LA FOTO -->
-  <img src="Felizdiadelamadre2.jpg" style="width:100%; border-radius:10px; margin-bottom:15px;">
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #ff4d6d;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+      }
 
-  <div class="message">
-    Mamá, mira esto con calma…  
-    hay algo muy especial aquí.  
-    Todo lo que viene tiene mucho de lo que tú me enseñaste.
-  </div>
+      /* Pantalla inicial */
+      #inicio {
+        display: block;
+      }
 
-  <button onclick="mostrarSorpresa()">Ver sorpresa</button>
+      /* Contenido oculto */
+      #contenido {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
 
-  <div id="sorpresa" class="hidden">
-    Creo que este será un nuevo comienzo para todos… 👶
-  </div>
-</div>
+      /* Imagen */
+      img {
+        width: 90%;
+        max-width: 400px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+      }
+
+      /* Texto */
+      .mensaje {
+        font-size: 18px;
+        max-width: 80%;
+        line-height: 1.5;
+      }
+
+      /* Botón */
+      button {
+        padding: 15px 30px;
+        font-size: 16px;
+        border: none;
+        border-radius: 30px;
+        background: white;
+        color: #ff4d6d;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Pantalla rosa -->
+    <div id="inicio">
+      <h1>Feliz Día de la Madre ❤️</h1>
+      <button onclick="mostrar()">Ver sorpresa</button>
+    </div>
+
+    <!-- Contenido oculto -->
+    <div id="contenido">
+      <img src="Felizdiadelamadre2.jpg" alt="Foto especial" />
+
+      <div class="mensaje">
+        Mamá, mira esto con calma… hay algo muy especial aquí. Todo lo que viene
+        tiene mucho de lo que tú me enseñaste ❤️
+      </div>
+    </div>
+
+    <audio id="music">
+      <source src="cancion.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      function mostrar() {
+        document.getElementById("inicio").style.display = "none";
+        document.getElementById("contenido").style.display = "flex";
+        document.getElementById("music").play();
+      }
+    </script>
+  </body>
+</html>
